@@ -1,0 +1,7 @@
+{application, etwilio,
+   [{description, "An Erlang library for communicating with the Twilio API and send SMS"},
+    {vsn, "1"},
+    {modules, [etwilio]},
+    {registered, []},
+    {applications, [kernel, stdlib]},
+    {env, []} ]}.
