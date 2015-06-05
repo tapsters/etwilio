@@ -1,20 +1,28 @@
-# Etwilio
-An Erlang library for communicating with the Twilio API and send SMS
+# etwilio
+An Erlang library for sending SMS via Twilio API
 
 Installing
 ----------
 
-In sys.config
+In rebar.config:
 
-```
-  {twilio, [
-    {sid,           "XXXXXXXXXX"},
-    {auth_token,    "XXXXXXXXXX"},
-    {phone,         "XXXXXXXXXX"}
-  ]}
+```Erlang
+{etwilio, ".*", {git, "git://github.com/tapsters/etwilio", {tag, "master"}}}
 ```
 
-Use
-----------
+In sys.config:
 
-```etwilio:send_sms("380930000000", "Text message").```
+```Erlang
+{twilio, [
+  {sid,        "DS9c2a3br044a4c9534207c98bc7b42db1"},
+  {auth_token, "7213eeebc23894062bbc24fce1807976"},
+  {phone,      "%2B13123456789"}
+]}
+```
+
+Usage
+-----
+
+```Erlang
+etwilio:send_sms("380931234567", "Hello, Mike!").
+```

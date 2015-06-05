@@ -1,7 +1,7 @@
 {application, etwilio,
-   [{description, "An Erlang library for communicating with the Twilio API and send SMS"},
+   [{description, "An Erlang library for sending SMS via Twilio API"},
     {vsn, "1"},
     {modules, [etwilio]},
     {registered, []},
-    {applications, [kernel, stdlib]},
+    {applications, [kernel, stdlib, inets, yaws_json2]},
     {env, []} ]}.
