@@ -26,6 +26,8 @@ send_sms(Phone, Message) ->
     {ok, {{"HTTP/1.1", 401, "UNAUTHORIZED"}, _, Data}} ->
       {struct, Json} = decode_json(Data),
       {error, proplists:get_value("detail", Json, "Failed to send sms (unauthorized)")};
+    {error, {failed_connect,[{to_address, {Address,Port}}, {inet,[inet],ssl_not_started}]}} ->
+      {error, "Filed Connect to Address: " ++ Address ++ ":" ++ integer_to_list(Port) ++ ". ssl not started"};
     _ ->
       {error, "Failed to send sms (unknown error)"}
   end.
