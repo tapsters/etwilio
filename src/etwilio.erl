@@ -6,9 +6,9 @@
 ]).
 
 send_sms(Phone, Message) ->
-  {ok,        Sid} = application:get_env(twilio, sid),
-  {ok,  FromPhone} = application:get_env(twilio, phone),
-  {ok,  AuthToken} = application:get_env(twilio, auth_token),
+  {ok,        Sid} = application:get_env(etwilio, sid),
+  {ok,  FromPhone} = application:get_env(etwilio, phone),
+  {ok,  AuthToken} = application:get_env(etwilio, auth_token),
 
   Output = httpc:request(post, {
       "https://api.twilio.com/2010-04-01/Accounts/" ++ Sid ++ "/Messages.json",
