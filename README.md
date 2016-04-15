@@ -13,7 +13,7 @@ In rebar.config:
 In sys.config:
 
 ```Erlang
-{twilio, [
+{etwilio, [
   {sid,        "YOUR_SID"},
   {auth_token, "YOUR_AUTH_TOKEN"},
   {phone,      "YOUR_PHONE"}
